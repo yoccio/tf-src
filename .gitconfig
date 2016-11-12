@@ -1,0 +1,26 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = yoccio
+	email = yoccio@qq.com
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  	co = checkout
+  	ci = commit
+  	st = status
+  	br = branch
+  	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  	type = cat-file -t
+  	dump = cat-file -p
+[core]
+	excludesfile = /Users/yoccio/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/yoccio/.stCommitMsg
