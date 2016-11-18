@@ -14,15 +14,6 @@ x = tf.placeholder("float", shape=[None, 28 * 28])
 # y_ hold temple result
 y_ = tf.placeholder("float", shape=[None, 10])
 
-W = tf.Variable(tf.zeros([784, 10]))
-b = tf.Variable(tf.zeros([10]))
-
-sess.run(tf.initialize_all_variables())
-
-y = tf.nn.softmax(tf.matmul(x, W) + b)
-
-cross_entropy = - tf.reduce_sum(y_ * tf.log(y))
-
 # Weight initialize and def for con&pool
 
 
