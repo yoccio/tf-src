@@ -9,13 +9,15 @@ import input_data
 mnist = input_data.read_data_sets('../../tensorflow/src_yoccio/MNIST_data/', one_hot=True)
 
 sess = tf.Session()
+<<<<<<< HEAD
 # x hold each pix in image
 x = tf.placeholder("float", shape=[None, 28 * 28])
 # y_ hold temple result
 y_ = tf.placeholder("float", shape=[None, 10])
+=======
+>>>>>>> bce7203ba5ea67a575f1577d723c5d79e3f44a90
 
 # Weight initialize and def for con&pool
-
 
 def weight_variable(shape):
     initial = tf.truncated_normal(shape, stddev=0.1)
